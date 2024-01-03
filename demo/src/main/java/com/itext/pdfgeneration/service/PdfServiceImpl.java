@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 @Service
 @Slf4j
@@ -13,7 +14,7 @@ import java.io.FileNotFoundException;
 public class PdfServiceImpl {
   private final GeneratePDF generatePDF;
 
-  public byte[] downloadInvoice() throws FileNotFoundException {
+  public byte[] downloadInvoice() throws IOException {
     return generatePDF.downloadBillingPdf();
   }
 }

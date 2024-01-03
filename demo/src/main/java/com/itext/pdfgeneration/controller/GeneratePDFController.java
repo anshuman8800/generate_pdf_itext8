@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 @RestController
 @RequestMapping("/")
@@ -27,7 +28,7 @@ public class GeneratePDFController {
   }
 
   @GetMapping(value = "/pdf")
-  public ResponseEntity<byte[]> downloadPdf() throws FileNotFoundException {
+  public ResponseEntity<byte[]> downloadPdf() throws IOException {
     log.debug("Making request to download the pdf.");
 
     HttpHeaders headers = new HttpHeaders();
